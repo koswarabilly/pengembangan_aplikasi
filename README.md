@@ -3,4 +3,4 @@
 | NIM        | NAMA           |
 | :-------------: |-------------:|
 | 03081170023     | Billy Koswara |
-| 03081170036     | Kevin Alexander      |
+| 03081170034     | Kevin Alexander      |
