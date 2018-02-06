@@ -1,145 +1,179 @@
 ![alt text](https://github.com/koswarabilly/pengembangan_aplikasi/blob/master/images/Untitled%20Diagram.jpg "USE-CASE")
 
-Simbol lingkaran elips menunjukkan use case untuk proses tertentu dan simbol orang pada diagram tersebut menunjukkan staff yang terlibat dalam use case tersebut.
-Simbol panah menunjukkan generalisasi, pada diagram contoh di atas staff kasir dan staff manajemenmerupakan sub dari staff.
-Masing-masing use case perlu dibuatkan narasi.
+Simbol lingkaran elips menunjukkan *use case* untuk proses tertentu dan simbol orang pada diagram tersebut menunjukkan *staff* yang terlibat dalam *use case* tersebut.
+Simbol panah menunjukkan generalisasi, pada diagram contoh di atas *staff* resepsionis dan *staff* manajemen merupakan sub dari *staff*.
+Masing-masing *use case* perlu dibuatkan narasi.
+
 # 1.	Login
 ## Description
-User masuk ke sistem untuk tujuan meng-establish identitas user di dalam sistem (untuk keperluan pencatatan dan akuntibilitas).
-Seluruh fungsi sistem hanya dapat digunakan apabila user sudah login ke dalam sistem.
+Pengguna masuk ke sistem untuk tujuan meng-*establish* identitas pengguna di dalam sistem (untuk keperluan pencatatan dan akuntibilitas).
+Seluruh fungsi sistem hanya dapat digunakan apabila pengguna sudah login ke dalam sistem.
+
 ### Normal Flow
-i.	User menyalakan aplikasi 
-ii.	Aplikasi menampilkan halaman login
-iii.	User memasukkan user dan password untuk login ke sistem
-iv.	Sistem memeriksa user dan password, apabila valid dan masih aktif, user akan di-login-kan ke sistem
-v.	User sudah dapat menggunakan aplikasi
+1.	Pengguna menyalakan aplikasi. 
+2.	Aplikasi menampilkan halaman *login*.
+3.	Pengguna memasukkan *username* dan *password* untuk masuk ke sistem.
+4.	Sistem memeriksa *username* dan *password*, apabila valid dan masih aktif, pengguna akan di-*login*-kan ke sistem.
+5.	Pengguna sudah dapat menggunakan aplikasi.
+
 ### Alternative Flow
-User salah memasukkan user/password
-vi.	User memasukkan user/password yang salah
-vii.	Sistem menampilkan pesan kesalahan dan menunggu user untuk memasukkan user dan password lagi
-viii.	Ulangi proses normal flow langkah ke ii.
+##### Pengguna salah memasukkan *username/password*.
+1.	Pengguna memasukkan *user/password* yang salah.
+2.	Sistem menampilkan pesan kesalahan dan menunggu pengguna untuk memasukkan *username* dan *password* lagi.
+3.	Ulangi proses *normal flow* dari langkah ke-2.
+
+
 # 2.	Logout
 ## Description
-User keluar dari sistem. Setiap user berkewajiban untuk logout dari sistem apabila sudah selesai menggunakan sistem.
-Precondition
-User dalam keadaan login di sistem.
+Pengguna keluar dari sistem. Setiap pengguna berkewajiban untuk __*logout*__ dari sistem apabila sudah selesai menggunakan sistem.
+
+### Precondition
+User dalam keadaan __*logged in*__ di sistem.
+
 ### Normal Flow
-i.	Staff menekan tombol logout pada aplikasi
-ii.	Sistem meng-logout user
-# 3.	Add User (user management)
+1.	*Staff* menekan tombol *logout* pada aplikasi.
+2.	Sistem meng-*logout* pengguna.
+
+
+# 3.	Add User ( *user management* )
 ## Description
-Menambahkan user baru ke dalam system jika ada staff receptionist yang baru.
-## Precondition
-User sudah login sebagai user manajemen.
+Menambahkan pengguna baru ke sistem jika ada *staff receptionist* yang __baru__.
+
+### Precondition
+User dalam keadaan __*logged in*__ di sistem.
+
 ### Normal Flow
-i.	User membuka menu user management dan menekan tombol add untuk menambahkan user baru.
-ii.	Sistem menampilkan form pendaftaran user baru
-iii.	User menginput data user baru:
-	nama lengkap
-	nama user
-	password & password verification
-	jenis user (kasir/manajemen)
-dan menekan tombol save untuk menyimpan data user
-iv.	Sistem memeriksa validitas data user baru, menyimpan informasi user ke databse dan menampilkan pesan notifikasi ke user bahwa user sudah tersimpan.
+1.	Pengguna membuka *menu user management* dan menekan tombol __*add*__ untuk menambahkan *user* baru.
+2.	Sistem menampilkan *form* pendaftaran *user* baru
+3.	Pengguna menginput data *user* baru:
+    -	nama lengkap
+    -	nama user
+    -	*password & password verification*
+    -	jenis *user* ( __kasir/manajemen__ )
+dan menekan tombol save untuk menyimpan data *user*
+    -	Sistem memeriksa validitas data *user* baru, menyimpan informasi *user* ke *database* dan menampilkan pesan notifikasi ke pengguna bahwa *user* baru sudah tersimpan
+
+
 # 4.	Remove User (staff management)
 ## Description
-Meng-nonaktifkan user. User yang sudah di-nonaktifkan tidak dapat login ke dalam sistem.
-## Precondition
-User sudah login sebagai user manajemen.
+Meng-nonaktifkan pengguna. Pengguna yang sudah di-nonaktifkan tidak dapat login ke dalam sistem.
+
+### Precondition
+User sudah *login* sebagai pengguna manajemen.
+
 ### Normal Flow
-i.	User membuka menu user management dan memilih account user yang akan dinonaktifkan.
-ii.	Sistem menampilkan form tampilan informasi account user.
-iii.	User menekan tombol non-aktif untuk meng-nonaktifkan user.
-iv.	Sistem mengupdate status keaktifan user ke database.
-Untuk mengaktifkan kembali user, lakukan flow yang sama.
-# 5.	Update user account (user management)
+1.	Pengguna membuka menu *user management* dan memilih *account user* yang akan dinonaktifkan.
+2.	Sistem menampilkan form tampilan informasi *account user*.
+3.	Pengguna menekan tombol non-aktif untuk meng-nonaktifkan *user*.
+4.	Sistem mengupdate status keaktifan *user* ke *database*.
+>Untuk mengaktifkan kembali user, lakukan flow yang sama.
+
+
+# 5.	Update user account ( *user management* )
 ## Description
-Mengubah informasi mengenai user, misalnya nama lengkap atau password.
+Mengubah informasi mengenai pengguna, misalnya nama lengkap atau *password*.
+
 ## Precondition
-User sudah login sebagai user manajemen.
+User sudah __*login*__ sebagai pengguna manajemen.
+
 ### Normal Flow
-i.	User membuka menu user management dan memilih account user yang akan di-update.
-ii.	Sistem menampilkan form tampilan informasi account user.
-iii.	User mengupdate informasi user dan menekan tombol save.
-iv.	Sistem menyimpan perubahan account user ke database.
-# 6.	Update Product (product management)
+1.	Pengguna membuka menu *user management* dan memilih *account user* yang akan di-*update*.
+2.	Sistem menampilkan *form* tampilan informasi *account user*.
+3.	User meng-*update* informasi *user* dan menekan tombol __*save*__.
+4.	Sistem menyimpan perubahan *account user* ke *database*.
+
+
+# 6.	Update Product (*product management*)
 ## Description
 Mengubah informasi mengenai kamar, misalnya harga atau foto kamar.
+
 ## Precondition
-User sudah login sebagai user manajemen.
+Pengguna sudah *login* sebagai *user* manajemen.
+
 ### Normal Flow
-i.	User membuka menu product management dan memilih product yang akan di-update.
-ii.	Sistem menampilkan form tampilan informasi product.
-iii.	User mengupdate informasi product dan menekan tombol save.
-iv.	Sistem menyimpan perubahan account product ke database.
+1.	Pengguna membuka menu *room management* dan memilih kamar yang akan di-*update*.
+2.	Sistem menampilkan form tampilan informasi kamar.
+3.	Pengguna meng-*update* informasi kamar dan menekan tombol __*save*__.
+4.	Sistem menyimpan perubahan informasi kamar ke *database*.
+
+
 # 7.	Order
 ## Description
-Pelanggan melakukan order kamar.
+Pelanggan melakukan pemesanan kamar.
+
 ## Precondition
-User sudah masuk ke dalam sistem sebagai user kasir.
+Pengguna sudah masuk ke dalam sistem sebagai *user* resepsionis.
+
 ### Normal Flow
-i.	Pelanggan melakukan order kepada receptionist sesuai dengan kamar yang tersedia.
-ii.	Staff menginput orderan pelanggan ke dalam sistem:
-	kamar yang diorder
-	Jumlah (qty) product
-iii.	Sistem memeriksa validitas order dan kemudian menyimpan informasi order ke database.
-iv.	Sistem menampilkan total tagihan.
+1.	Pelanggan melakukan pemesanan kepada resepsionis sesuai dengan kamar yang tersedia.
+2.	Pengguna menginput pesanan pelanggan ke dalam sistem:
+    -	kamar yang diorder
+    -	Jumlah (__qty__) kamar
+3.	Sistem memeriksa validitas pesanan dan kemudian menyimpan informasi pesanan ke *database*.
+4.	Sistem menampilkan total tagihan.
+
 ### Alternative Flow
-Pelanggan memesan product yang tidak aktif.
-v.	Pada proses validasi order, sistem menampilkan notifikasi ke user bahwa product yang di-order tidak tersedia.
-vi.	User mengubah order atau membatalkan order sesuai dengan keputusan dari pelanggan.
-vii.	Sistem memvalidasi order. Jika sudah valid simpan data order ke database. Jika belum ulangi proses ini.
-viii.	Sistem menampilkan total tagihan (jika order tidak dibatalkan).
+Pelanggan memesan kamar yang tidak aktif.
+1.	Pada proses validasi pesanan, sistem menampilkan notifikasi ke pengguna bahwa kamar yang dipesan tidak tersedia.
+2.	Pengguna mengubah pesanan atau membatalkan pesanan sesuai dengan keputusan dari pelanggan.
+3.	Sistem memvalidasi pesanan. Jika sudah valid simpan data pesanan ke *database*. Jika belum ulangi proses ini.
+4.	Sistem menampilkan total tagihan (jika pesanan tidak dibatalkan).
+
+
 # 8.	Payment
 ## Description
 Pelanggan membayar pesanan.
+
 ## Precodition
-User sudah masuk ke dalam sistem sebagai user kasir. Orderan pelanggan sudah disimpan oleh sistem (order valid).
+Pengguna sudah masuk ke dalam sistem sebagai pengguna resepsionis. Pesanan pelanggan sudah disimpan oleh sistem (pesanan valid).
+
 ### Normal Flow
-i.	Staff receptionist meminta pembayaran kepada pelanggan sesuai dengan total tagihan. Kemudian staff kasir menginput informasi pembayaran.
-ii.	Sistem merekam informasi pembayaran dan kemudian mencetak faktur order dan pembayaran.
-iii.	Staff kasir menginformasikan ke petugas room service untuk mengantar pelanggan ke kamarnya.
+1.	Staff receptionist meminta pembayaran kepada pelanggan sesuai dengan total tagihan. Kemudian staff resepsionis menginput informasi pembayaran.
+2.	Sistem merekam informasi pembayaran dan kemudian mencetak faktur pesanan dan pembayaran.
+3.	Staff kasir menginformasikan ke petugas *room service* untuk mengantar pelanggan ke kamarnya.
+
+
 # 9.	Report POS
 ## Description
-Menampilkan summary transaksi
+Menampilkan *summary* transaksi.
+
 ## Precondition
-User sudah login sebagai user manajemen.
+Pengguna sudah login sebagai *user* manajemen.
+
 ### Normal Flow
-i.	User mengakses menu laporan dan memilih laporan POS.
-ii.	Sistem menampilkan form untuk menerima input kriteria laporan.
-iii.	User menginput kriteria laporan dan mengklik tombol report.
-iv.	Sistem mengolah data report dan kemudian menampilkan laporan kepada user.
-# 10.	Report Cash Register
-## Description
-Menampilkan summary transaksi cash register berdasarkan kriteria tertentu.
-## Precondition
-User sudah login sebagai user manajemen.
-### Normal Flow
-i.	User mengakses menu laporan dan memilih laporan Cash Register.
-ii.	Sistem menampilkan form untuk menerima input kriteria laporan.
-iii.	User menginput kriteria laporan dan mengklik tombol report.
-iv.	Sistem mengolah data report dan kemudian menampilkan laporan kepada user.
-# 11.	Cash In/Out
+1.	Pengguna mengakses menu laporan dan memilih laporan.
+2.	Sistem menampilkan *form* untuk menerima input kriteria laporan.
+3.	Pengguna menginput kriteria laporan dan mengklik tombol __*report*__.
+4.	Sistem mengolah data __*report*__ dan kemudian menampilkan laporan kepada pengguna.
+
+
+# 10.	Cash In/Out
 ## Description
 Proses memasukkan uang melalui proses transaksi.
+
 ## Precondition
-User sudah login sebagai user receptionist.
+Pengguna sudah login sebagai *user* resepsionis.
+
 ### Normal Flow
-i.	User mengakses menu transaksi.
-ii.	Sistem menampilkan form input data cash in.
-iii.	User menginput data cash in:
-	Jumlah
-	Keterangan
+1.	Pengguna mengakses menu transaksi.
+2.	Sistem menampilkan form input data *cash in*.
+3.	User menginput data *cash in*:
+    -	Jumlah
+    -	Keterangan
 dan kemudian menekan tombol save.
-iv.	Sistem menyimpan data cash in ke database dan mencetak faktur cash in.
+4.	Sistem menyimpan data *cash in* ke database dan mencetak faktur *cash in*.
+
+
 # 12.	Ganti Shift
 ## Description
-Proses pergantian shift user. 
+Proses pergantian shift *staff*. 
+
 ## Precondition
-User sudah login sebagai user resepsionis.
+Pengguna sudah login sebagai *user* resepsionis.
+
 ### Normal Flow
-i.	Sistem menampilkan waktu untuk melakukan pergantian shift.
-ii.	Kasir pengganti memasukkan informasi login.
-iii.	Sistem memeriksa login kasir pengganti.
-iv.	User kasir pertama akan dilogout.
+1.	Sistem menampilkan waktu untuk melakukan pergantian *shift*.
+2.	Resepsionis pengganti memasukkan informasi *login*.
+3.	Sistem memeriksa *login* resepsionis pengganti.
+4.	Pengguna resepsionis pertama akan di-*logout*.
 
